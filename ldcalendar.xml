@@ -8,10 +8,10 @@
   </ModulePrefs>
   <Content type="html" view="home">
     <![CDATA[
-    <link rel="stylesheet" href="../res/css/jquery-ui.css" type="text/css">
+    <link rel="stylesheet" href="/res/css/jquery-ui.css" type="text/css">
     
-     <script src='../res/js/jquery.min.js' type='text/javascript'></script>
-     <script src='../res/js/jquery-ui.js' type='text/javascript'></script>
+     <script src='/res/js/jquery.min.js' type='text/javascript'></script>
+     <script src='/res/js/jquery-ui.js' type='text/javascript'></script>
     
   <style type="text/css">
  #ex2 img {
