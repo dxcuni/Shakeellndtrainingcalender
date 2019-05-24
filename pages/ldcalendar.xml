@@ -135,7 +135,7 @@
         }
 */
         function setupAC() {
-            var select = document.getElementById("selectTitle");
+            var select = document.getElementById("selectLocation");
             var uniqMyArr = [];
             uniqMyArr = $.unique(myArr.sort())
             //uniqMyArr = unique(myArr);
@@ -200,7 +200,7 @@
 
   <label style="text-decoration-color:#000000">Keyword Search</label>
         <!--<input type="text" id="searchBox" name="searchBox" value="Test" />   --> 
-    <select id="selectTitle" name="selectTitle">
+    <select id="selectLocation" name="selectLocation">
     </select>
 
     <button name="searchKeyword" id="searchKeyword">Sumbit</button>
