@@ -39,7 +39,8 @@ alert("Hi 123")
 					alert(strTable)
                 },
 		error: function () {
-                    console.log("An error occurred while processing XML file." + Response);
+                    //console.log("An error occurred while processing XML file." + Response);
+                   alert("An error occurred while processing XML file." + Response);
 
                  }
 
