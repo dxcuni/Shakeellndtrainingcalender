@@ -1,48 +1,50 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?> 
 <pages>
 <link>
-    <title>India</title>
-    <CourseName>India Course 1</CourseName>
+    <location>India</location>
+    <coursename>India Course 1</coursename>
     <url>https://dxc.sabacloud.com/Saba/Web_spf/NA2PRD0005/common/learningeventdetail/curra000000000003601</url>
 </link>
 <link>
-    <title>Malaysia</title>
-   <CourseName>Malaysia Course 1</CourseName>
+    <location>Malaysia</location>
+   <coursename>Malaysia Course 1</coursename>
     <url>https://dxc.sabacloud.com/Saba/Web_spf/NA2PRD0005/app/shared;spf-url=common%2Flearningeventdetail%2Fcurra000000000003860</url>
 </link>
 <link>
-    <title>Singapore</title>
-    <CourseName>Singapore Course 1</CourseName>
+    <location>Singapore</location>
+    <coursename>Singapore Course 1</coursename>
     <url>https://dxc.sabacloud.com/Saba/Web_spf/NA2PRD0005/app/shared;spf-url=common%2Flearningeventdetail%2Fcurra000000000003600</url>
 </link>
 <link>
-    <title>Singapore</title>
-    <CourseName>Singapore Course 2</CourseName>
+    <location>Singapore</location>
+    <coursename>Singapore Course 2</coursename>
     <url>https://dxc.sabacloud.com/Saba/Web_spf/NA2PRD0005/app/shared;spf-url=common%2Flearningeventdetail%2Fcurra000000000003140</url>
 </link>
   <link>
-    <title>India</title>
-    <CourseName>India Course 2</CourseName>
+    <location>India</location>
+    <coursename>India Course 2</coursename>
     <url>https://dxc.sabacloud.com/Saba/Web_spf/NA2PRD0005/app/shared;spf-url=common%2Flearningeventdetail%2Fcurra000000000003341</url>
 </link>
   <link>
-    <title>India</title>
-    <CourseName>India Course 3</CourseName>
+    <location>India</location>
+    <coursename>India Course 3</coursename>
     <url>https://dxc.sabacloud.com/Saba/Web_spf/NA2PRD0005/app/shared;spf-url=common%2Flearningeventdetail%2Fcurra000000000003580</url>
 </link>
 <link>
-    <title>India</title>
-    <CourseName>India Course 4</CourseName>
+    <location>India</location>
+    <coursename>India Course 4</coursename>
     <url>https://dxc.sabacloud.com/Saba/Web_spf/NA2PRD0005/app/shared;spf-url=common%2Flearningeventdetail%2Fcurra000000000003820</url>
 </link>
 <link>
-    <title>Malaysia</title>
-  <CourseName>Malaysia Course 2</CourseName>
+    <location>Malaysia</location>
+  <coursename>Malaysia Course 2</coursename>
     <url>https://dxc.sabacloud.com/Saba/Web_spf/NA2PRD0005/app/shared;spf-url=common%2Flearningeventdetail%2Fcurra000000000003521</url>
 </link>
 <link>
-    <title>Malaysia</title>
-    <CourseName>Malaysia Course 3</CourseName>
+    <location>Malaysia</location>
+    <coursename>Malaysia Course 3</coursename>
     <url>https://dxc.sabacloud.com/Saba/Web_spf/NA2PRD0005/app/shared;spf-url=common%2Flearningeventdetail%2Fcurra000000000003900</url>
 </link>
+
+
 </pages>
