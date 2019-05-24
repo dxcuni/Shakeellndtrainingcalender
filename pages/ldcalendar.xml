@@ -77,7 +77,9 @@ p.a {
 
 
     <div id="divFAQ" style="font-family:'GT_Walsheim_Pro_Regular';padding-top:0px;width:100%">
-    fsdfsfasdfasdfasdfsfasfsfsfasdfasfasdfsdfsa
+       <!-- COMMENTED OUT
+	<p><h2 style="font-family:'GT_Walsheim_Pro_Regular'">Here are some of the most frequently asked<br />questions that employees have about DXC<br />University.</h2></p>
+	-->
     </div>  
     
 <!--Penny DXC Arrow START 2-14-18 Valentine -->
