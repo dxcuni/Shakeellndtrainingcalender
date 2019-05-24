@@ -101,7 +101,7 @@
          $(document).ready(function () {
          var myArr = [];
          var myArrCourseMonth = [];
-alert("Changes 1222")
+alert("Changes 22")
         $.ajax({
             type: "GET",
             url: "https://raw.githubusercontent.com/dxcuni/lndtrainingcalender/itg/res/xml/calendardata.xml",
@@ -114,13 +114,15 @@ alert("Changes 1222")
             }
         });
 
-        function parseXml(xml) {
-
-            //find every query value
+       function parseXml(xml) {
+            //Put Locaiton/ month values in arry 
             $(xml).find("link").each(function () {
-                myArr.push($(this).find('location').text());
+                var $item = $(this);
+                myArrLocation.push($(this).find('location').text());
                 myArrCourseMonth.push($(this).find('course_month').text());
-            });
+            });           
+           
+            
         }
 
 
@@ -136,8 +138,8 @@ alert("Changes 1222")
             });
         }
 */
-        function setupAC() {
-             //// for location dropdown  setup 
+         function setupAC() {
+            //// for location dropdown  setup 
             var selectLocation = document.getElementById("selectLocation");
             var uniqMyArrLocation = [];
             uniqMyArrLocation = $.unique(myArrLocation.sort())
