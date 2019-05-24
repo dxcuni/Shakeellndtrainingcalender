@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?> 
+
 <pages>
+    
 <link>
     <location>India</location>
-     <course_month>Jan</course_month>
+    <course_month>Jan</course_month>
     <course_name>India Course 1 Jan</course_name>
     <url>https://dxc.sabacloud.com/Saba/Web_spf/NA2PRD0005/common/learningeventdetail/curra000000000003601</url>
 </link>
 <link>
     <location>Malaysia</location>
-  <course_month>Jan</course_month>
+    <course_month>Jan</course_month>
     <course_name>Malaysia Course 1 Jan</course_name>
     <url>https://dxc.sabacloud.com/Saba/Web_spf/NA2PRD0005/app/shared;spf-url=common%2Flearningeventdetail%2Fcurra000000000003860</url>
 </link>
