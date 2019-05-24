@@ -99,8 +99,9 @@
     <script>
         //Code Starts
          $(document).ready(function () {
-        var myArr = [];
-alert("Changes 12")
+         var myArr = [];
+         var myArrCourseMonth = [];
+alert("Changes 1222")
         $.ajax({
             type: "GET",
             url: "https://raw.githubusercontent.com/dxcuni/lndtrainingcalender/itg/res/xml/calendardata.xml",
@@ -118,6 +119,7 @@ alert("Changes 12")
             //find every query value
             $(xml).find("link").each(function () {
                 myArr.push($(this).find('location').text());
+                myArrCourseMonth.push($(this).find('course_month').text());
             });
         }
 
@@ -135,17 +137,27 @@ alert("Changes 12")
         }
 */
         function setupAC() {
-            var select = document.getElementById("selectLocation");
-            var uniqMyArr = [];
-            uniqMyArr = $.unique(myArr.sort())
-            //uniqMyArr = unique(myArr);
-            // Populate list with options:
-            for (var i = 0; i < uniqMyArr.length; i++) {
-                var opt = uniqMyArr[i];
-                select.innerHTML += "<option value=\"" + opt + "\">" + opt + "</option>";               
+             //// for location dropdown  setup 
+            var selectLocation = document.getElementById("selectLocation");
+            var uniqMyArrLocation = [];
+            uniqMyArrLocation = $.unique(myArrLocation.sort())
+            for (var i = 0; i < uniqMyArrLocation.length; i++) {
+                var optLocation = uniqMyArrLocation[i];
+                selectLocation.innerHTML += "<option value=\"" + optLocation + "\">" + optLocation + "</option>";
 
             }
-           ;
+            ;
+
+            //// for month drop down setup 
+            var selectCourseMonth = document.getElementById("selectCourseMonth");
+            var uniqMyArrCourseMonth = [];
+            uniqMyArrCourseMonth = $.unique(myArrCourseMonth.sort())
+            for (var j = 0; j < uniqMyArrCourseMonth.length; j++) {
+                var optCourseMonth = uniqMyArrCourseMonth[j];
+                selectCourseMonth.innerHTML += "<option value=\"" + optCourseMonth + "\">" + optCourseMonth + "</option>";
+
+            }
+            ;
         }
   
 
@@ -154,8 +166,9 @@ alert("Changes 12")
         $("#dvContent").empty();
         $("#dvContent").append("<div></div>");
         
-        //var searchValue = $('#searchBox').val();  // Here you get the search text
-        var searchValue = $('#selectLocation').val();  // Here you get the search text
+        
+        var searchLocation = $('#selectLocation').val();  // Here you get the search text
+        var searchCourseMonth = $('#selectCourseMonth').val();  // Here you get the search text
             //alert("Hi " + searchValue);
         var strTable = ''
         val = true
@@ -165,21 +178,36 @@ alert("Changes 12")
             //url: "links.xml",
             dataType: "xml",
             success: function (xml) {
-                $(xml).find('link').each(function () {
+               $(xml).find('link').each(function () {
                     var slocation = $(this).find('location').text();
+                    var sMonth = $(this).find('course_month').text();
                     var surl = $(this).find('url').text();
-                    var courseName = $(this).find('coursename').text();
-
-                    if (searchValue == slocation) {  // Only append those if search text matches with title
-                        //$("<li></li>").html(stitle + ", " + surl).appendTo("#dvContent div");
-                        //$( '<a href="' + surl + '" class="pill-button dark"  target="_blank" >' + courseName + '</a>'.appendTo("#dvContent div");
-                        strTable += '<a href="' + surl + '" class="pill-button dark"  target="_blank" >' + courseName + '</a>';
-                        //alert("Hi" + strTable)
-                       //
+                    var courseName = $(this).find('course_name').text();
+                    //alert(sMonth)
+                    if (searchLocation != '' && searchCourseMonth != '') {
+                        if (searchLocation == slocation && searchCourseMonth == sMonth) {
+                            strTable += '<a href="' + surl + '" class="pill-button dark"  target="_blank" >' + courseName + '</a>';
+                            val = false
+                          //  alert("11")
+                        }
                     }
+                    else if (searchLocation != '' && searchCourseMonth == '') {
+                        if (searchLocation == slocation) {
+                            strTable += '<a href="' + surl + '" class="pill-button dark"  target="_blank" >' + courseName + '</a>';
+                            val = false
+                           // alert("1")
+                        }
+                    }
+                    else if (searchLocation == '' && searchCourseMonth != '') {
+                        if (searchCourseMonth == sMonth) {
+                            strTable += '<a href="' + surl + '" class="pill-button dark"  target="_blank" >' + courseName + '</a>';
+                            val = false
+                            //alert("1")
+                        }
+                    }
+                    
                 });
-                $('#dvContent').append(strTable);
-                val = false
+                $('#dvContent').append(strTable);                
                 if (val) {
                     $("<li></li>").html("No data").appendTo("#dvContent div");
 
@@ -187,7 +215,6 @@ alert("Changes 12")
             },
             error: function () {
                 alert("An error occurred while processing XML file.");
-                //console.log("An error occurred while processing XML file." + Response);
             }
         });
     });
@@ -196,11 +223,15 @@ alert("Changes 12")
 
     });
 
-    </script>
 
+    </script>
   <label style="text-decoration-color:#000000">Keyword Search</label>
         <!--<input type="text" id="searchBox" name="searchBox" value="Test" />   --> 
     <select id="selectLocation" name="selectLocation">
+        <option value="">Select Location</option>
+    </select>
+    <select id="selectCourseMonth" name="selectCourseMonth">
+        <option value="" >Select Month</option>
     </select>
 
     <button name="searchKeyword" id="searchKeyword">Sumbit</button>
