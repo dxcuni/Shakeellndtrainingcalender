@@ -17,11 +17,11 @@
     <script>
         //Code Starts
         $(document).ready(function () {
-alert("Hi 112222333")
+alert("Hi 1111")
              var strTable = '<table width="100%" border="1px">'
             $.ajax({
                 type: "GET",
-                url: "../itg/res/xml/QuestionAnswer.xml",
+                url: "QuestionAnswer.xml",
                 dataType: "xml",
                 success: function (xml) {
 alert("Hi 123")
