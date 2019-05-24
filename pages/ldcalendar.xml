@@ -100,7 +100,7 @@
         //Code Starts
          $(document).ready(function () {
         var myArr = [];
-
+alert("Changes 12")
         $.ajax({
             type: "GET",
             url: "https://raw.githubusercontent.com/dxcuni/lndtrainingcalender/itg/res/xml/calendardata.xml",
