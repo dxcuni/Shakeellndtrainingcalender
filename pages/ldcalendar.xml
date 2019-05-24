@@ -22,7 +22,7 @@ alert("Hi")
             $.ajax({
                 type: "GET",
 
-                url: "https://raw.githubusercontent.com/dxcuni/lndtrainingcalender/itg/res/xml/QuestionAnswer.xml",
+                url: "https://raw.githubusercontent.com/dxcuni/help/master/resource/include/QuestionAnswer.xml",
                 dataType: "xml",
                 success: function (xml) {
 alert("Hi 123")
