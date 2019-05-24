@@ -11,13 +11,13 @@
 
     
   
-     <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js' type='text/javascript'></script>
+     <script src='../res/js/jquery.min.js' type='text/javascript'></script>
     
 
     <script>
         //Code Starts
         $(document).ready(function () {
-alert("Hi 123121")
+alert("Hi HHHH")
              var strTable = '<table width="100%" border="1px">'
             $.ajax({
                 type: "GET",
