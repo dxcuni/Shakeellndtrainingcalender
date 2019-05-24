@@ -100,7 +100,7 @@
         //Code Starts
          $(document).ready(function () {
         var myArr = [];
-alert("Can")
+
         $.ajax({
             type: "GET",
             url: "https://raw.githubusercontent.com/dxcuni/lndtrainingcalender/itg/res/xml/calendardata.xml",
@@ -114,7 +114,7 @@ alert("Can")
         });
 
         function parseXml(xml) {
-alert("BANNNNNN")
+
             //find every query value
             $(xml).find("link").each(function () {
                 myArr.push($(this).find('title').text());
@@ -187,6 +187,7 @@ alert("BANNNNNN")
             },
             error: function () {
                 alert("An error occurred while processing XML file.");
+                //console.log("An error occurred while processing XML file." + Response);
             }
         });
     });
