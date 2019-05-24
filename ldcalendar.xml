@@ -36,7 +36,7 @@ p.a {
              var strTable = '<table width="100%" border="1px">'
             $.ajax({
                 type: "GET",
-                url: "https://raw.githubusercontent.com/dxcuni/help/master/resource/include/QuestionAnswer.xml",
+                url: "https://raw.githubusercontent.com/dxcuni/help/master/res/xml/QuestionAnswer.xml",
                 dataType: "xml",
                 success: function (xml) {
                     var count = 1;
