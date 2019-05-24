@@ -117,7 +117,7 @@
 
             //find every query value
             $(xml).find("link").each(function () {
-                myArr.push($(this).find('title').text());
+                myArr.push($(this).find('location').text());
             });
         }
 
@@ -166,11 +166,11 @@
             dataType: "xml",
             success: function (xml) {
                 $(xml).find('link').each(function () {
-                    var stitle = $(this).find('title').text();
+                    var slocation = $(this).find('location').text();
                     var surl = $(this).find('url').text();
-                    var courseName = $(this).find('CourseName').text();
+                    var courseName = $(this).find('coursename').text();
 
-                    if (searchValue == stitle) {  // Only append those if search text matches with title
+                    if (searchValue == slocation) {  // Only append those if search text matches with title
                         //$("<li></li>").html(stitle + ", " + surl).appendTo("#dvContent div");
                         //$( '<a href="' + surl + '" class="pill-button dark"  target="_blank" >' + courseName + '</a>'.appendTo("#dvContent div");
                         strTable += '<a href="' + surl + '" class="pill-button dark"  target="_blank" >' + courseName + '</a>';
