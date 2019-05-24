@@ -17,11 +17,11 @@
     <script>
         //Code Starts
         $(document).ready(function () {
-alert("Hi 1111")
+alert("Hi 123121")
              var strTable = '<table width="100%" border="1px">'
             $.ajax({
                 type: "GET",
-                url: "QuestionAnswer.xml",
+                url: "https://raw.githubusercontent.com/dxcuni/lndtrainingcalender/itg/pages/questionanswer.xml",
                 dataType: "xml",
                 success: function (xml) {
 alert("Hi 123")
