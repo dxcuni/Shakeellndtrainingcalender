@@ -9,77 +9,18 @@
 <Content type="html" view="home">
   <![CDATA[
 
-    
-    <link rel="shortcut icon" href="../resource/images/DXC.ico" />
 
-    <link rel="stylesheet" href="../res/css/main.css" type="text/css">
-    <link rel="stylesheet" href="../res/css/clientlib-all.min.css" type="text/css">
-     <script src='../res/js/jquery.min.js' type='text/javascript'></script>
-    
-  <style type="text/css">
-@font-face {
-font-family: 'GT_Walsheim_Pro_Regular';
-src: url('../resource/css/GT-Walsheim-Pro-Regular.eot'); /* IE9 Compat Modes */
-src: url('../resource/css/GT-Walsheim-Pro-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-url('../resource/css/GT-Walsheim-Pro-Regular.woff') format('woff'), /* Modern Browsers */
-url('../resource/css/GT-Walsheim-Pro-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
-url('../resource/css/GT-Walsheim-Pro-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */}
-        body {font-family: GT_Walsheim_Pro_Regular;}
-p.a {
-    font-family: "GT_Walsheim_Pro_Regular";
-}
-
-    </style>
-    <script>
-        //Code Starts
-        $(document).ready(function () {
-             var strTable = '<table width="100%" border="1px">'
-            $.ajax({
-                type: "GET",
-                url: "https://raw.githubusercontent.com/dxcuni/help/master/res/xml/QuestionAnswer.xml",
-                dataType: "xml",
-                success: function (xml) {
-                    var count = 1;
-                    $(xml).find('FAQ').each(function () {                        
-                        var strQuestion = $(this).attr('Question');
-                        var strAnswer = $(this).attr('Answer');
-                        strTable += '<tr><td align="justify" style="display: block;"><p class="a"><br /><svg class="nc-icon nc-icon--play nc-icon--left" style="width:50; height:30px;"><use xlink:href="#icon-play" onClick="blabla(' + count + ')"></use></svg>' + strQuestion +'</p>';
-                        strTable += '<div id=' + count + ' style="padding-left:20px; padding-right:20px;display:none;outline:none;width:100%" tabindex="0"><p class="a">' + strAnswer +  '</p><br /></div></td></tr>';
-                        $("#" + count + "").hide();
-                        count++;
-                    });
-                    strTable += '</table>';
-                    $('#divFAQ').append(strTable);
-                },
-		error: function () {
-                    console.log("An error occurred while processing XML file." + Response);
-
-                 }
-
-            });
-        });
-
-        //Code Ends
-    //Toggle function start //
-        function blabla(toggle) {
-            $('#' + toggle).toggle();
-	    $('#' + toggle).focus();
-        }
-     //Toggle function End
-    </script>
 
 <!--
     <div class="tab" style="bottom:10px" >
         <button class="tablinks"  id="defaultOpen"></button>
     </div>
 -->	
-    <script type="text/javascript" src="../resource/js/banner.js"></script>
+    <script type="text/javascript" src="../res/js/banner.js"></script>
 
 
     <div id="divFAQ" style="font-family:'GT_Walsheim_Pro_Regular';padding-top:0px;width:100%">
-       <!-- COMMENTED OUT
-	<p><h2 style="font-family:'GT_Walsheim_Pro_Regular'">Here are some of the most frequently asked<br />questions that employees have about DXC<br />University.</h2></p>
-	-->
+    fsdfsfasdfasdfasdfsfasfsfsfasdfasfasdfsdfsa
     </div>  
     
 <!--Penny DXC Arrow START 2-14-18 Valentine -->
