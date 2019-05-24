@@ -155,7 +155,7 @@
         $("#dvContent").append("<div></div>");
         
         //var searchValue = $('#searchBox').val();  // Here you get the search text
-        var searchValue = $('#selectTitle').val();  // Here you get the search text
+        var searchValue = $('#selectLocation').val();  // Here you get the search text
             //alert("Hi " + searchValue);
         var strTable = ''
         val = true
