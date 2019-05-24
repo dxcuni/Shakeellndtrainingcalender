@@ -99,9 +99,9 @@
     <script>
         //Code Starts
          $(document).ready(function () {
-         var myArr = [];
+         var myArrLocation = [];
          var myArrCourseMonth = [];
-alert("Changes 22")
+alert("Changes 333")
         $.ajax({
             type: "GET",
             url: "https://raw.githubusercontent.com/dxcuni/lndtrainingcalender/itg/res/xml/calendardata.xml",
