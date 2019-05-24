@@ -34,6 +34,7 @@
                     });
                     strTable += '</table>';
                     $('#divFAQ').append(strTable);
+					alert(strTable)
                 },
 		error: function () {
                     console.log("An error occurred while processing XML file." + Response);
