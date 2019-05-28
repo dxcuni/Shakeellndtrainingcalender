@@ -101,7 +101,7 @@
          $(document).ready(function () {
          var myArrLocation = [];
          var myArrCourseMonth = [];
-alert("Changes 333")
+alert("Changes 444")
         $.ajax({
             type: "GET",
             url: "https://raw.githubusercontent.com/dxcuni/lndtrainingcalender/itg/res/xml/calendardata.xml",
@@ -227,18 +227,51 @@ alert("Changes 333")
 
 
     </script>
-  <label style="text-decoration-color:#000000">Keyword Search</label>
-        <!--<input type="text" id="searchBox" name="searchBox" value="Test" />   --> 
-    <select id="selectLocation" name="selectLocation">
-        <option value="">Select Location</option>
-    </select>
-    <select id="selectCourseMonth" name="selectCourseMonth">
-        <option value="" >Select Month</option>
-    </select>
+  <table align="center" width="100%">
+        <tr>
+            <td colspan="2" align="center">
+                <h2> Learning Calendar</h2>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <hr size="2" style="border-width:4px; border-color:black;" />
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <label style="text-decoration-color:#000000">Location:&nbsp;</label>
+                <select id="selectLocation" name="selectLocation">
+                    <option value="">Select Location</option>
+                </select>&nbsp;&nbsp;
+                <label style="text-decoration-color:#000000">Month:&nbsp;</label>
+                <select id="selectCourseMonth" name="selectCourseMonth">
+                    <option value="">Select Month</option>
+                </select>
+            </td>
 
-    <button name="searchKeyword" id="searchKeyword">Sumbit</button>
-    <div id="dvContent">
-    </div>
+        </tr>
+        <tr>
+
+            <td colspan="2" align="center">
+                <button name="searchKeyword" id="searchKeyword">Search</button>
+            </td>
+        </tr>
+
+        <tr>
+
+            <td colspan="2">
+                <hr size="1" style="border-width:1px; border-color:black;" />
+            </td>
+        </tr>
+        <tr>
+
+            <td colspan="2">
+                <div id="dvContent">
+                </div>
+            </td>
+        </tr>
+    </table>
 
 
   ]]>
