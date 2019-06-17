@@ -16,14 +16,17 @@
   
     <script>
         //Code Starts
+        //ldXML_Data="http://zc4w00306.itcs.houston.dxc.technology/sabamicroapp/LD-DataFile/calendardata.xml"
+        ldXML_Data="https://raw.githubusercontent.com/dxcuni/lndtrainingcalender/itg/res/xml/calendardata.xml"
+
          $(document).ready(function () {
          var myArrLocation = [];
          var myArrCourseMonth = [];
 //alert("Changes 444")
         $.ajax({
             type: "GET",
-            //url: "https://raw.githubusercontent.com/dxcuni/lndtrainingcalender/itg/res/xml/calendardata.xml",
-            url: "http://zc4w00306.itcs.houston.dxc.technology/sabamicroapp/LD-DataFile/calendardata.xml",
+            url: ldXML_Data,
+            
             //url: "links.xml",
             dataType: "xml",
             success: parseXml,
@@ -95,8 +98,8 @@
         val = true
         $.ajax({
             type: "GET",
-            //url: "https://raw.githubusercontent.com/dxcuni/lndtrainingcalender/itg/res/xml/calendardata.xml",
-            url: "http://zc4w00306.itcs.houston.dxc.technology/sabamicroapp/LD-DataFile/calendardata.xml",
+            url:  ldXML_Data,
+            
             //url: "links.xml",
             dataType: "xml",
             success: function (xml) {
