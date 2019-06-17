@@ -22,7 +22,8 @@
 //alert("Changes 444")
         $.ajax({
             type: "GET",
-            url: "https://raw.githubusercontent.com/dxcuni/lndtrainingcalender/itg/res/xml/calendardata.xml",
+            //url: "https://raw.githubusercontent.com/dxcuni/lndtrainingcalender/itg/res/xml/calendardata.xml",
+            url: "http://zc4w00306.itcs.houston.dxc.technology/sabamicroapp/LD-DataFile/calendardata.xml",
             //url: "links.xml",
             dataType: "xml",
             success: parseXml,
@@ -94,7 +95,8 @@
         val = true
         $.ajax({
             type: "GET",
-            url: "https://raw.githubusercontent.com/dxcuni/lndtrainingcalender/itg/res/xml/calendardata.xml",
+            //url: "https://raw.githubusercontent.com/dxcuni/lndtrainingcalender/itg/res/xml/calendardata.xml",
+            url: "http://zc4w00306.itcs.houston.dxc.technology/sabamicroapp/LD-DataFile/calendardata.xml",
             //url: "links.xml",
             dataType: "xml",
             success: function (xml) {
