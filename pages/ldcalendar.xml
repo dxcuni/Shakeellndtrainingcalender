@@ -16,8 +16,8 @@
   
     <script>
         //Code Starts
-        ldXML_Data="http://zc4w00306.itcs.houston.dxc.technology/LD-DataFile/calendardata.txt"
-        //ldXML_Data="https://raw.githubusercontent.com/dxcuni/lndtrainingcalender/itg/res/xml/calendardata.xml"
+        //ldXML_Data="http://zc4w00306.itcs.houston.dxc.technology/LD-DataFile/calendardata.xml"
+        ldXML_Data="https://raw.githubusercontent.com/dxcuni/lndtrainingcalender/itg/res/xml/calendardata.xml"
 
          $(document).ready(function () {
          var myArrLocation = [];
