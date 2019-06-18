@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+  <ModulePrefs title="DXCU Help/FAQ">
+    <Require feature="opensocial-templates"/>
+    <Require feature="opensocial-data"/>
+    <Require feature="views"/>
+    <Require feature="dynamic-height"/>
+  </ModulePrefs>
+  <Content type="html" view="home">
+    <![CDATA[
+    <link rel="stylesheet" href="../res/css/jquery-ui.css" type="text/css">  
+    <link rel="stylesheet" href="../res/css/textcss.css" type="text/css">  
+     <script src='../res/js/jquery.min.js' type='text/javascript'></script>
+     <script src='../res/js/jquery-ui.js' type='text/javascript'></script>
+    
+  
+    <script>
+        //Code Starts
+        //ldXML_Data="http://zc4w00306.itcs.houston.dxc.technology:82/calendardata.xml"
+        ldXML_Data="https://raw.githubusercontent.com/dxcuni/lndtrainingcalender/itg/res/xml/calendardata.xml"
+
+         $(document).ready(function () {
+         var myArrLocation = [];
+         var myArrCourseMonth = [];
+//alert("Changes 444")
+        $.ajax({
+            type: "GET",
+            url: ldXML_Data,
+            
+            //url: "links.xml",
+            dataType: "xml",
+            success: parseXml,
+            complete: setupAC,
+            failure: function (data) {
+                alert("XML File could not be found");
+            }
+        });
+
+       function parseXml(xml) {
+            //Put Locaiton/ month values in arry 
+            $(xml).find("link").each(function () {
+                var $item = $(this);
+                myArrLocation.push($(this).find('location').text());
+                myArrCourseMonth.push($(this).find('course_month').text());
+            });           
+           
+            
+        }
+
+
+
+/*        function setupAC() {
+            $("input#searchBox").autocomplete({
+                source: myArr,
+                minLength: 3,
+                select: function (event, ui) {
+                    $("input#searchBox").val(ui.item.value);
+                    $("#searchForm").submit();
+                }
+            });
+        }
+*/
+         function setupAC() {
+            //// for location dropdown  setup 
+            var selectLocation = document.getElementById("selectLocation");
+            var uniqMyArrLocation = [];
+            uniqMyArrLocation = $.unique(myArrLocation.sort())
+            for (var i = 0; i < uniqMyArrLocation.length; i++) {
+                var optLocation = uniqMyArrLocation[i];
+                selectLocation.innerHTML += "<option value=\"" + optLocation + "\">" + optLocation + "</option>";
+
+            }
+            ;
+
+            //// for month drop down setup 
+            var selectCourseMonth = document.getElementById("selectCourseMonth");
+            var uniqMyArrCourseMonth = [];
+            uniqMyArrCourseMonth = $.unique(myArrCourseMonth.sort())
+            for (var j = 0; j < uniqMyArrCourseMonth.length; j++) {
+                var optCourseMonth = uniqMyArrCourseMonth[j];
+                selectCourseMonth.innerHTML += "<option value=\"" + optCourseMonth + "\">" + optCourseMonth + "</option>";
+
+            }
+            ;
+        }
+  
+
+
+        $("#searchKeyword").click(function () {
+        $("#dvContent").empty();
+        $("#dvContent").append("<div></div>");
+        
+        
+        var searchLocation = $('#selectLocation').val();  // Here you get the search text
+        var searchCourseMonth = $('#selectCourseMonth').val();  // Here you get the search text
+            //alert("Hi " + searchValue);
+        var strTable = ''
+        val = true
+        $.ajax({
+            type: "GET",
+            url:  ldXML_Data,
+            
+            //url: "links.xml",
+            dataType: "xml",
+            success: function (xml) {
+               $(xml).find('link').each(function () {
+                    var slocation = $(this).find('location').text();
+                    var sMonth = $(this).find('course_month').text();
+                    var surl = $(this).find('url').text();
+                    var courseName = $(this).find('course_name').text();
+                    //alert(sMonth)
+                    if (searchLocation != '' && searchCourseMonth != '') {
+                        if (searchLocation == slocation && searchCourseMonth == sMonth) {
+                            strTable += '<a href="' + surl + '" class="pill-button dark"  target="_blank" >' + courseName + '</a>';
+                            val = false
+                          //  alert("11")
+                        }
+                    }
+                    else if (searchLocation != '' && searchCourseMonth == '') {
+                        if (searchLocation == slocation) {
+                            strTable += '<a href="' + surl + '" class="pill-button dark"  target="_blank" >' + courseName + '</a>';
+                            val = false
+                           // alert("1")
+                        }
+                    }
+                    else if (searchLocation == '' && searchCourseMonth != '') {
+                        if (searchCourseMonth == sMonth) {
+                            strTable += '<a href="' + surl + '" class="pill-button dark"  target="_blank" >' + courseName + '</a>';
+                            val = false
+                            //alert("1")
+                        }
+                    }
+                    
+                });
+                $('#dvContent').append(strTable);                
+                if (val) {
+                    $("<li></li>").html("No data").appendTo("#dvContent div");
+
+                }
+            },
+            error: function () {
+                alert("An error occurred while processing XML file.");
+            }
+        });
+    });
+
+
+
+    });
+
+
+    </script>
+  <table align="center" width="100%">
+        <tr>
+            <td colspan="2" align="center">
+                <h2> Learning Calendar</h2>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <hr size="2" style="border-width:4px; border-color:black;" />
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <label style="text-decoration-color:#000000">Location:&nbsp;</label>
+                <select id="selectLocation" name="selectLocation">
+                    <option value="">Select Location</option>
+                </select>&nbsp;&nbsp;
+                <label style="text-decoration-color:#000000">Month:&nbsp;</label>
+                <select id="selectCourseMonth" name="selectCourseMonth">
+                    <option value="">Select Month</option>
+                </select>
+            </td>
+
+        </tr>
+        <tr>
+
+            <td colspan="2" align="center">
+                <button name="searchKeyword" id="searchKeyword">Search</button>
+            </td>
+        </tr>
+
+        <tr>
+
+            <td colspan="2">
+                <hr size="1" style="border-width:1px; border-color:black;" />
+            </td>
+        </tr>
+        <tr>
+
+            <td colspan="2">
+                <div id="dvContent">
+                </div>
+            </td>
+        </tr>
+    </table>
+
+
+  ]]>
+  </Content>
+</Module>
